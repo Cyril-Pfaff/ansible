@@ -1,4 +1,6 @@
 - hosts: all
+  roles:
+    - common
   tasks:
 
     - ansible.builtin.debug:
@@ -6,12 +8,5 @@
       tags:
         - never
 
-    - name: copie de fichier
-      ansible.builtin.copy:
-        src: ./test.html
-        dest: /tmp/test.html
-
-    - name: utilisation de template
-      ansible.builtin.template:
-        src: readme.txt.j2
-        dest: /tmp/readme.txt
+    - ansible.builtin.shell:
+        cmd: cat /tmp/readme.txt
