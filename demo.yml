@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+
+    - name: est ce que ca fonctionne
+      ansible.builtin.debug:
+        msg: oui !
